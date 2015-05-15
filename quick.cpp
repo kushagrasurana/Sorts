@@ -33,25 +33,28 @@ void quick_sort(vector<int> &in)
 		l=p+1;
 		while(l<r)
 		{
-			while(in[l]<in[p] && l<r)
+			while(in[l]<in[p] && l<high)
 				l++;
-			while(in[r]>=in[p] && r>l)
+			while(in[r]>=in[p] && r>low)
 				r--;
 			cout<<"swap"<<l<<"with"<<r<<endl;
-			temp=in[r];
-			in[r]=in[l];
-			in[l]=temp;
+			if(l<r)
+			{
+				temp=in[r];
+				in[r]=in[l];
+				in[l]=temp;
+			}
 		}
 		temp = in[p];
-		in[p]=in[l-1];
-		in[l-1]=temp;
+		in[p]=in[r];
+		in[r]=temp;
 		cout<<"gives the array"<<endl;
 		for(int x=0;x<in.size();x++)
 			cout<<in[x]<<" ";
 		cout<<endl;
 		calls.pop();
-		calls.push(make_pair(low,l-2));
-		calls.push(make_pair(l,high));
+		calls.push(make_pair(low,r-1));
+		calls.push(make_pair(r+1,high));
 	}
 }
 

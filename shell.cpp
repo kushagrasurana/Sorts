@@ -12,25 +12,25 @@ using namespace::std;
 
 void shell_sort(vector <int> &in)
 {
-	int temp,i,j,k,h=1;
-	vector<int> gap;
-	while(h<in.size())
+	int temp, i, j, k, h = 1;
+	vector <int> gap;
+	while(h < in.size())
 	{
 		gap.push_back(h);
 		h = static_cast<int>(2.25*h);
 	}
-	for(k=gap.size()-1;k>=0;k--)
+	for(k = gap.size()-1; k >= 0; k--)
 	{
-		h=gap[k];
-		for(i=h;i<in.size();i++)
+		h = gap[k];
+		for( i = h; i<in.size(); i++)
 		{
-			j=i;
-			while(j>=h && in[j]<in[j-h])
+			j = i;
+			while( j >= h && in[j] < in[j-h])
 			{
 				temp = in[j];
 				in[j] = in[j-h];
 				in[j-h] = temp;
-				j-=h;
+				j -= h;
 			}
 		}
 	}
@@ -40,8 +40,8 @@ int main()
 {
 	int n;
 	cin>>n;
-	vector<int> in;
-	for(int i=0;i<n;i++)
+	vector <int> in;
+	for(int i=0; i<n; i++)
 	{
 		int input;
 		cin>>input;
@@ -49,7 +49,7 @@ int main()
 	}
 	shell_sort(in);
 
-	for(int i=0;i<n;i++)
+	for(int i=0; i<n; i++)
 		cout<<in.at(i)<<" ";
 
 	cout<<endl;

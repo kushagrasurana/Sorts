@@ -1,4 +1,4 @@
-/* Selection Sort
+/* Insertion Sort
  * Time Complexity -
  * Worst case -- O(n^2)
  * Best case  -- O(n)
@@ -12,10 +12,10 @@ using namespace::std;
 
 void insertion_sort(vector <int> &in)
 {
-	int temp,i,j,k;
-	for(int i=1;i<in.size();i++)
+	int temp, i, j, k;
+	for(int i=1; i<in.size(); i++)
 	{
-		j=i;
+		j = i;
 		while(j>0 && in[j]<in[j-1] )
 		{
 			temp = in[j];
@@ -30,8 +30,8 @@ int main()
 {
 	int n;
 	cin>>n;
-	vector<int> in;
-	for(int i=0;i<n;i++)
+	vector <int> in;
+	for(int i=0; i<n; i++)
 	{
 		int input;
 		cin>>input;
@@ -39,7 +39,7 @@ int main()
 	}
 	insertion_sort(in);
 
-	for(int i=0;i<n;i++)
+	for(int i=0; i<n; i++)
 		cout<<in.at(i)<<" ";
 
 	cout<<endl;

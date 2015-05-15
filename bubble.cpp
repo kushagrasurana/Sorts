@@ -13,12 +13,12 @@ void bubble_sort(vector<int> &in)
 {
 	int temp;
 	bool swap;
-	for(int i=0;i<in.size();i++)
+	for(int i=0; i<in.size(); i++)
 	{
 		swap = false;
-		for(int j=1;j<in.size()-i;j++)
+		for(int j=1; j<in.size()-i; j++)
 		{
-			if (in[j]<in[j-1])
+			if (in[j] < in[j-1])
 			{
 				temp = in[j];
 				in[j] = in[j-1];
@@ -35,8 +35,8 @@ int main()
 {
 	int n;
 	cin>>n;
-	vector<int> in;
-	for(int i=0;i<n;i++)
+	vector <int> in;
+	for(int i=0; i<n; i++)
 	{
 		int input;
 		cin>>input;
@@ -44,7 +44,7 @@ int main()
 	}
 	bubble_sort(in);
 
-	for(int i=0;i<n;i++)
+	for(int i=0; i<n; i++)
 		cout<<in.at(i)<<" ";
 
 	cout<<endl;

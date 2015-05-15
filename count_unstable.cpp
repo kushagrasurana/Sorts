@@ -12,29 +12,31 @@ using namespace::std;
 
 void count_sort(vector <int> &in)
 {
-	int temp,i,j,k,min = INT_MAX,max = INT_MIN;
+	int temp, i, j, k, min = INT_MAX, max = INT_MIN;
 	/* find maximum and minimum of the input */
-	for(i=0;i<in.size();i++)
+	for(i=0; i<in.size(); i++)
 	{
 		if(in[i]>max)
-			max=in[i];
+			max = in[i];
 		if(in[i]<min)
-			min=in[i];
+			min = in[i];
 	}
 	if((max-min)>10e7)
 		cout<<"Data range is too high"<<endl;
 	else
 	{
-		int count[max-min+1],j=0;
-		for(i=0;i<max-min+1;i++)
-			count[i]=0;
-		for(i=0;i<in.size();i++)
+		int count[max-min+1], j = 0;
+		for(i=0; i<max-min+1; i++)
+			count[i] = 0;
+
+		for(i=0; i<in.size(); i++)
 			count[in[i]-min]++;
-		for(i=0;i<(max-min+1);i++)
+
+		for(i=0; i<(max-min+1); i++)
 		{
 			while(count[i])
 			{
-				in[j]=i+min;
+				in[j] = i + min;
 				j++;
 				count[i]--;
 			}
@@ -46,8 +48,8 @@ int main()
 {
 	int n;
 	cin>>n;
-	vector<int> in;
-	for(int i=0;i<n;i++)
+	vector <int> in;
+	for(int i=0; i<n; i++)
 	{
 		int input;
 		cin>>input;
@@ -55,7 +57,7 @@ int main()
 	}
 	count_sort(in);
 
-	for(int i=0;i<n;i++)
+	for(int i=0 ;i<n; i++)
 		cout<<in.at(i)<<" ";
 
 	cout<<endl;

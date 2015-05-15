@@ -86,6 +86,7 @@ def main():
 			test_file(name, size)
 		else:
 			if len(sys.argv) > 3:
+				size = int(sys.argv[2])
 				limit = int(sys.argv[3])
 				test_file(name, size, limit)
 			else:

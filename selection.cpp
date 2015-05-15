@@ -12,16 +12,16 @@ using namespace::std;
 
 void selection_sort(vector<int> &in)
 {
-	int temp,max,maxi,j;
-	for(int i=0;i<in.size();i++)
+	int temp, max, maxi, j;
+	for(int i=0; i<in.size(); i++)
 	{
-		max=INT_MIN;
-		for(j=0;j<in.size()-i;j++)
+		max = INT_MIN;
+		for( j=0; j<in.size() - i; j++)
 		{
-			if(in[j]>max)
+			if(in[j] > max)
 			{
-				max=in[j];
-				maxi=j;
+				max = in[j];
+				maxi = j;
 			}
 		}
 		temp = in[maxi];
@@ -34,8 +34,8 @@ int main()
 {
 	int n;
 	cin>>n;
-	vector<int> in;
-	for(int i=0;i<n;i++)
+	vector <int> in;
+	for(int i=0; i<n; i++)
 	{
 		int input;
 		cin>>input;
@@ -43,7 +43,7 @@ int main()
 	}
 	selection_sort(in);
 
-	for(int i=0;i<n;i++)
+	for(int i=0; i<n; i++)
 		cout<<in.at(i)<<" ";
 
 	cout<<endl;
